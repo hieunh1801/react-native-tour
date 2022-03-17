@@ -1,4 +1,3 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import appAsyncStorage from './appAsyncStorage';
 
 const ASYNC_STORAGE_KEY = '@TodoApp:todos';

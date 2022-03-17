@@ -1,11 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import todoApi, { Todo } from './api/asyncStorage/todoApi';
 import { AppBorderRadius, AppColor, AppFont } from './constants/app';
 import randomString from './utilities/randomString';
 
 const App = () => {
   const [todo, setTodo] = useState<string>(null);
   const [todos, setTodos] = useState<Todo[]>([]);
+
+  const loadTodos = async () => {
+    try {
+      const data = await todoApi.getAllTodo();
+      setTodos(data);
+    } catch (err: Error) {
+      console.log(err);
+    }
+  };
+
+  const addTodo = async (nTodo: Todo) => {
+    try {
+      await todoApi.addTodo(nTodo);
+      loadTodos();
+    } catch (err: Error) {
+      console.log(err);
+    }
+  };
+
+  const deleteTodo = async (id: string) => {
+    try {
+      await todoApi.deleteTodoById(id);
+      loadTodos();
+    } catch (err: Error) {
+      console.log(err);
+    }
+  };
+
+  const updateTodo = async (mTodo: Todo) => {
+    try {
+      await todoApi.updateTodo(mTodo);
+      loadTodos();
+    } catch (err: Error) {
+      console.log(err);
+    }
+  };
 
   const handleOnPressAdd = () => {
     if (todo) {
@@ -15,22 +52,24 @@ const App = () => {
         createdAt: new Date().toLocaleTimeString(),
         completed: false,
       };
-      console.log(newTodo);
-      setTodos([newTodo, ...todos]);
+      addTodo(newTodo);
+      setTodo(null);
     }
   };
 
-  const handleOnPressToggleTodo = (index: number) => {
-    const newTodos = [...todos];
-    newTodos[index].completed = !newTodos[index].completed;
-    setTodos(newTodos);
+  const handleOnPressToggleTodo = (todoItem: Todo) => {
+    const newTodo = { ...todoItem, completed: !todoItem.completed };
+    updateTodo(newTodo);
   };
 
-  const handleOnPressDeleteTodo = (index: number) => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+  const handleOnPressDeleteTodo = (todoItem: Todo) => {
+    deleteTodo(todoItem.id);
   };
+
+  useEffect(() => {
+    console.log('init todo list');
+    loadTodos();
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -51,9 +90,9 @@ const App = () => {
       </View>
       <View>
         <ScrollView style={styles.todoListContainer}>
-          {todos.map((item, index) => (
-            <View style={styles.todoContainer}>
-              <TouchableOpacity key={item.id} style={styles.todoContent} onPress={() => handleOnPressToggleTodo(index)}>
+          {todos?.map(item => (
+            <View style={styles.todoContainer} key={item.id}>
+              <TouchableOpacity style={styles.todoContent} onPress={() => handleOnPressToggleTodo(item)}>
                 <Text style={styles.todoText}>
                   {item.completed ? '✓ ' : '    '}
                   {item.text}
@@ -63,7 +102,7 @@ const App = () => {
                   {item?.createdAt}
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => handleOnPressDeleteTodo(index)}>
+              <TouchableOpacity onPress={() => handleOnPressDeleteTodo(item)}>
                 <Text style={styles.deleteTodoButton}>✘</Text>
               </TouchableOpacity>
             </View>
@@ -73,14 +112,6 @@ const App = () => {
     </View>
   );
 };
-
-interface Todo {
-  id: string;
-  text: string;
-  createdAt: string;
-  completed: boolean;
-  completedAt?: string;
-}
 
 const styles = StyleSheet.create({
   container: {

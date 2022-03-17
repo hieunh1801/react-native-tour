@@ -1,11 +1,5 @@
 # Todo Application
 
 ```md
-- AppV1:
-
-  - create, show list, delete todo list
-
-- AppV2:
-  - include feature of AppV1
-  - persist data with localStorage =>
+branch | app-002-v1: build sample todo list with feature show, create, delete
 ```

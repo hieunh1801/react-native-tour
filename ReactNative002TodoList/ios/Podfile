@@ -12,6 +12,8 @@ target 'ReactNative002TodoList' do
     :hermes_enabled => false
   )
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'ReactNative002TodoListTests' do
     inherit! :complete
     # Pods for testing

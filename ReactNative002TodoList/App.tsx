@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { Fonts } from './src/constants';
 
 const App = () => {
   const imageSource: ImageSourcePropType = {
@@ -27,9 +28,8 @@ const styles = StyleSheet.create({
   },
   appTitle: {
     fontSize: 30,
-    fontWeight: 'bold',
     color: '#032f54',
-    fontFamily: 'Lato',
+    fontFamily: Fonts.regular,
   },
   textInputContainer: {},
 });

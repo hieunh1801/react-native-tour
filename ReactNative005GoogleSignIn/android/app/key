@@ -1,0 +1,26 @@
+Alias name: my_key_alias
+Creation date: Mar 24, 2022
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+Issuer: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+Serial number: 280f1a12
+Valid from: Thu Mar 24 16:05:52 ICT 2022 until: Mon Aug 09 16:05:52 ICT 2049
+Certificate fingerprints:
+	 SHA1: FB:23:F0:4E:12:72:22:C2:E1:73:10:2A:56:31:6B:92:02:2B:1F:4B
+	 SHA256: 6E:1E:5D:97:49:E4:D6:C9:11:F1:C5:9F:57:29:4F:08:FC:64:DB:33:7B:9C:07:FC:D6:A9:DD:E4:84:F1:D9:70
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 6B D6 35 39 41 B9 90 B6   48 C9 A9 A4 7E 02 76 3C  k.59A...H.....v<
+0010: F9 E6 06 C1                                        ....
+]
+]
+

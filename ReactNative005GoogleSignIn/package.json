@@ -7,9 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "keytool:key": "cd android/app && keytool -genkey -v -keystore app_release_key.keystore -alias my_key_alias -keyalg RSA -keysize 2048 -validity 10000 ",
+    "keytool:sha1": "keytool -list -v -keystore app_release_key.keystore -alias my_key_alias"
   },
   "dependencies": {
+    "@react-native-google-signin/google-signin": "^7.2.2",
     "react": "17.0.2",
     "react-native": "0.67.4"
   },

@@ -1,5 +1,4 @@
 apply plugin: "com.android.application"
-
 import com.android.build.OutputFile
 
 /**
@@ -147,10 +146,21 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+//             storeFile file('debug.keystore')
+//             storePassword 'android'
+//             keyAlias 'androiddebugkey'
+//             keyPassword 'android'
+            storeFile file('my_release_key.keystore')
+            storePassword '123456aA@'
+            keyAlias 'my_key_alias'
+            keyPassword '123456aA@'
+        }
+
+        release {
+            storeFile file('my_release_key.keystore')
+            storePassword '123456aA@'
+            keyAlias 'my_key_alias'
+            keyPassword '123456aA@'
         }
     }
     buildTypes {
@@ -168,6 +178,8 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+
         }
     }
 
@@ -194,6 +206,9 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    implementation 'com.google.android.gms:play-services-auth:20.0.0' // Google Play Services Auth
+    implementation "androidx.browser:browser:1.2.0" // Browser
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'

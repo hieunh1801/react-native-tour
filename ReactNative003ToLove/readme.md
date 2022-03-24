@@ -7,8 +7,12 @@ npm install @react-navigation/native
 npm install react-native-screens react-native-safe-area-context
 # from React Native 0.60 and higher, linking is automatic. So no need to run npm react-native link
 npm install @react-navigation/native-stack
-```
 
+# for drawer
+npm install --save @react-navigation/drawer react-native-gesture-handler react-native-reanimated
+npx react-native link react-native-gesture-handler react-native-reanimated
+
+```
 > kill all process before running. After install - remember to run `npm run android`
 
 - When see react-native-screen auto link to our project => it gonna be success
@@ -69,3 +73,5 @@ const Screen2 = ({ navigation, route }) => {
   });
 };
 ```
+
+

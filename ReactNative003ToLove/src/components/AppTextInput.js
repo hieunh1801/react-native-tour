@@ -1,16 +1,19 @@
 import React from 'react';
-import {TextInput, StyleSheet} from 'react-native';
+import {View, TextInput, StyleSheet, Text} from 'react-native';
 import {AppColor, AppFont} from '../constants/app.constants';
 
-const AppTextInput = ({placeholder, value, onChange, secureTextEntry}) => {
+const AppTextInput = ({placeholder, value, onChange, secureTextEntry, label}) => {
   return (
-    <TextInput
-      placeholder={placeholder}
-      value={value}
-      onChangeText={onChange}
-      secureTextEntry={secureTextEntry}
-      style={styles.input}
-    />
+    <View>
+      {label && <Text style={styles.label}>{label}</Text>}
+      <TextInput
+        placeholder={placeholder}
+        value={value}
+        onChangeText={onChange}
+        secureTextEntry={secureTextEntry}
+        style={styles.input}
+      />
+    </View>
   );
 };
 
@@ -25,6 +28,14 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 3,
     fontFamily: AppFont.regular,
+  },
+  label: {
+    marginBottom: 8,
+    fontFamily: AppFont.semiBold,
+  },
+
+  requireMarker: {
+    color: AppColor.red,
   },
 });
 

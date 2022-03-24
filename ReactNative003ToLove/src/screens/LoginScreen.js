@@ -12,7 +12,7 @@ const LoginScreen = ({navigation}) => {
 
   const onLogin = () => {
     if (username && password) {
-      navigation.replace(AppRouteName.homeScreen);
+      navigation.replace(AppRouteName.appDrawer);
     } else {
       setErrors({required: 'Username and password is required'});
     }

@@ -38,5 +38,7 @@ export const AppRouteName = {
   settingsScreen: 'SettingsScreen',
   splashScreen: 'SplashScreen',
   tierUpgradeScreen: 'TierUpgradeScreen',
-  upcomingEvents: 'UpcomingEventsScreen',
+  upcomingEventsScreen: 'UpcomingEventsScreen',
+  appDrawer: 'AppDrawer',
+  registerScreen: 'RegisterScreen',
 };

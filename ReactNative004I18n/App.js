@@ -1,4 +1,5 @@
-import './src/i18n/index';
+import './src/assets/i18n/index';
+
 import React, {useState} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 import {useTranslation} from 'react-i18next';

@@ -8,6 +8,7 @@ import {HomeScreen} from './screens/home/home.screen';
 
 import {LogBox} from 'react-native';
 import {A004RotateScreen} from './screens/a004-rotate/a004-rotate';
+import {A005BottomModalScreen} from './screens/a005-bottom-modal/a005-bottom-modal.screen';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -18,6 +19,7 @@ export type AppStackParamList = {
   A002FadeInOut: undefined;
   A003SpringDecayTime: undefined;
   A004Rotate: undefined;
+  A005BottomModal: undefined;
 };
 
 export type ScreenNameEnum = keyof AppStackParamList;
@@ -49,6 +51,10 @@ export const APP_STACK_SCREEN_LIST: Screen[] = [
   {
     screenName: 'A004Rotate',
     component: A004RotateScreen,
+  },
+  {
+    screenName: 'A005BottomModal',
+    component: A005BottomModalScreen,
   },
 ];
 

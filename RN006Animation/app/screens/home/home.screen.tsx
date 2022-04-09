@@ -1,7 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import {HomeScreenPropsType} from './home.screen.types';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import {IconChevronRight} from '../../components/icons/icons';
 import {APP_STACK_SCREEN_LIST, Screen} from '../../App';
 

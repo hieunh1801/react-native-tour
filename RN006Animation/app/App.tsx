@@ -9,6 +9,7 @@ import {HomeScreen} from './screens/home/home.screen';
 import {LogBox} from 'react-native';
 import {A004RotateScreen} from './screens/a004-rotate/a004-rotate';
 import {A005BottomModalScreen} from './screens/a005-bottom-modal/a005-bottom-modal.screen';
+import {Ra001} from './screens/ra001/ra001';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -20,6 +21,7 @@ export type AppStackParamList = {
   A003SpringDecayTime: undefined;
   A004Rotate: undefined;
   A005BottomModal: undefined;
+  Ra001: undefined;
 };
 
 export type ScreenNameEnum = keyof AppStackParamList;
@@ -29,32 +31,44 @@ const AppStack = createNativeStackNavigator<AppStackParamList>();
 export interface Screen {
   screenName: ScreenNameEnum;
   component: ComponentType<any>;
+  title: string;
 }
 
 export const APP_STACK_SCREEN_LIST: Screen[] = [
   {
     screenName: 'Home',
     component: HomeScreen,
+    title: 'Home',
   },
   {
     screenName: 'A001TranslateXY',
     component: A001TranslateXYScreen,
+    title: 'Translate to y',
   },
   {
     screenName: 'A002FadeInOut',
     component: A002FadeInOutScreen,
+    title: 'Fade in out',
   },
   {
     screenName: 'A003SpringDecayTime',
     component: A003SpringDecayTimeScreen,
+    title: 'Spring decay time',
   },
   {
     screenName: 'A004Rotate',
     component: A004RotateScreen,
+    title: 'Rotate',
   },
   {
     screenName: 'A005BottomModal',
     component: A005BottomModalScreen,
+    title: 'Bottom Modal',
+  },
+  {
+    screenName: 'Ra001',
+    component: Ra001,
+    title: 'Re-animated 001 | Transition',
   },
 ];
 
@@ -67,6 +81,7 @@ const App = () => {
             key={screen.screenName}
             name={screen.screenName}
             component={screen.component}
+            options={{title: screen.title}}
           />
         ))}
       </AppStack.Navigator>

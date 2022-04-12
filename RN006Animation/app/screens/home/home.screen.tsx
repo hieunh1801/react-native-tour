@@ -23,7 +23,7 @@ export const HomeScreen: React.FC<HomeScreenPropsType> = ({navigation}) => {
             key={screen.screenName}
             onPress={() => navigateToScreen(screen)}
             style={styles.screenListItem}>
-            <Text>{screen.screenName}</Text>
+            <Text>{screen.title}</Text>
             <IconChevronRight />
           </TouchableOpacity>
         ))}

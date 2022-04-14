@@ -16,7 +16,7 @@ export const HomeScreen = () => {
             onPress={() => {
               navigation.navigate(item.name);
             }}>
-            <Text>{item.name}</Text>
+            <Text>{item.title}</Text>
           </TouchableOpacity>
         );
       })}
@@ -32,5 +32,6 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '100%',
     backgroundColor: '#fff',
+    marginTop: 1,
   },
 });

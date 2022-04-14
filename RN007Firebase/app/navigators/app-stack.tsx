@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen} from '../screens/home/home.screen';
 import {RootStackParamListEnum} from './app-stack.types';
 import {Fire001} from '../screens/fire-001/fire-001.screen';
+import {Fire002} from '../screens/fire-002/fire-002.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,11 @@ export const STACK_LIST = [
     name: RootStackParamListEnum.Fire001,
     title: 'Fire001: Anonymous login',
     component: Fire001,
+  },
+  {
+    name: RootStackParamListEnum.Fire002,
+    title: 'Fire002: Sign up && login by email and password',
+    component: Fire002,
   },
 ];
 

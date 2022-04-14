@@ -78,3 +78,25 @@ Error: Missing keystore
 ## Fire003: Login by mobile
 
 - Add schema in URL list
+-
+
+## Fire004: Login with Apple
+
+https://rnfirebase.io/auth/social-auth
+https://github.com/invertase/react-native-apple-authentication
+
+I did it on XCode
+TARGETS > Signing & Capabilities > +Capability then search sign in then add it.
+But the problem persist
+
+Only work on ios version 13.6 simulator and 14 on real device
+
+## Fire004: Login with google
+
+https://github.com/react-native-google-signin/google-signin#project-setup-and-initialization
+
+https://rnfirebase.io/auth/social-auth#google
+
+```bash
+cd android && ./gradlew clean
+```

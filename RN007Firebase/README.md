@@ -64,3 +64,17 @@ Store: /Users/nguyenhuuhieu/.android/debug.keystore
 Alias: AndroidDebugKey
 Error: Missing keystore
 ```
+
+## Fire001: Login with anonymous
+
+- Enable login by anonymous in google console
+  https://console.firebase.google.com/project/rn007firebase/authentication/providers
+
+## Fire002: Login with email and password
+
+- Enable login with email and password in google console
+  https://console.firebase.google.com/project/rn007firebase/authentication/providers
+
+## Fire003: Login by mobile
+
+- Add schema in URL list

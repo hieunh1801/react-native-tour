@@ -91,6 +91,11 @@ But the problem persist
 
 Only work on ios version 13.6 simulator and 14 on real device
 
+```
+Architecture not run 
+https://stackoverflow.com/questions/65364886/react-native-on-apple-silicon-m1-the-linked-library-libpods-projectname-a-is
+```
+
 ## Fire004: Login with google
 
 https://github.com/react-native-google-signin/google-signin#project-setup-and-initialization

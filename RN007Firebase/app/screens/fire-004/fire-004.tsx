@@ -8,11 +8,12 @@ import auth from '@react-native-firebase/auth';
 async function onAppleButtonPress() {
   try {
     // Start the sign-in request
+    console.log('start sign in request');
     const appleAuthRequestResponse = await appleAuth.performRequest({
       requestedOperation: appleAuth.Operation.LOGIN,
       requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME],
     });
-
+    console.log('apple response', appleAuthRequestResponse);
     // Ensure Apple returned a user identityToken
     if (!appleAuthRequestResponse.identityToken) {
       throw new Error('Apple Sign-In failed - no identify token returned');

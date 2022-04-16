@@ -14,7 +14,6 @@ enum Fire002ModeEnum {
   LOGIN = 'LOGIN',
   SIGN_UP = 'SIGN_UP',
 }
-
 interface Account {
   email: string;
   password: string;

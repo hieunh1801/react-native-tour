@@ -10,8 +10,12 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "@types/react-native-vector-icons": "^6.4.10",
     "react": "17.0.2",
-    "react-native": "0.68.1"
+    "react-native": "0.68.1",
+    "react-native-vector-icons": "^9.1.0",
+    "react-redux": "^7.2.8"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

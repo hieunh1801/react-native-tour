@@ -1,4 +1,4 @@
-package com.rn008todos;
+package com.hieunh1801.todos;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

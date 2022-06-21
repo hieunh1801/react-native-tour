@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
@@ -68,6 +69,11 @@ export const TodoListScreen: React.FC<TodoListScreenPropsType> = () => {
             ))}
         </View>
       </ScrollView>
+      <TouchableWithoutFeedback>
+        <View style={styles.addButton}>
+          <MaterialCommunityIcons name="plus" size={30} color="white" />
+        </View>
+      </TouchableWithoutFeedback>
     </View>
   );
 };
@@ -110,5 +116,18 @@ const styles = StyleSheet.create({
   },
   todoItemCompleted: {
     opacity: 0.1,
+  },
+  addButton: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#333',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 9999,
+    elevation: 5,
   },
 });

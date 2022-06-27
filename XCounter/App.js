@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {CalendarModule} from './app/native-module/calendar';
 
 const App = () => {
   const [counter, setCounter] = React.useState(0);
@@ -22,6 +23,13 @@ const App = () => {
             setCounter(c => c - 1);
           }}>
           <Text style={styles.actionText}>-</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => {
+            CalendarModule.createCalendarEvent('testName', 'testLocation');
+          }}>
+          <Text style={styles.actionText}>Call CalendarModule</Text>
         </TouchableOpacity>
       </View>
     </View>
